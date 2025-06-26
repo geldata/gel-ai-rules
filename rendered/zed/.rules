@@ -1,0 +1,6 @@
+## Using the Gel database
+
+/file gel-rules/gel.md
+/file gel-rules/gel-python.md
+
+Use Gel MCP server to find advanced code examples and execute queries with args and globals.

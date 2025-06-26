@@ -1,0 +1,10 @@
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "./gel-rules/gel.md"
+    },
+    {
+      "file": "./gel-rules/gel-python.md"
+    }
+  ]
+}

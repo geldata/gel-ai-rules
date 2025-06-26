@@ -1,0 +1,17 @@
+{
+    "inputs": [],
+    "servers": {
+        "gel": {
+            "type": "stdio",
+            "command": "uvx",
+            "args": [
+                "--refresh",
+                "--directory",
+                ".",
+                "--from",
+                "git+https://github.com/geldata/gel-mcp.git",
+                "gel-mcp"
+            ]
+        }
+    }
+}
