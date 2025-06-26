@@ -1,3 +1,4 @@
+
 # Working with Gel in Python
 
 For general information please request a general Gel rules document.
@@ -204,4 +205,7 @@ await db.save(posts[0], new_post)
 - Chain `.filter()`, `.select()`, `.order_by()` methods for complex queries, use `.__edgeql__` to verify the query.
 - Use lambda functions for advanced filtering with `std` module functions
 - Leverage object references to maintain relationships between data
+
+
+
 

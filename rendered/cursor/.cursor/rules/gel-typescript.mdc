@@ -1,5 +1,7 @@
 ---
 description: Working with Gel in TypeScript
+globs:
+alwaysApply: false
 ---
 
 # Gel TypeScript Query Builder Guide

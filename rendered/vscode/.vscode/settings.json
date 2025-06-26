@@ -5,6 +5,9 @@
     },
     {
       "file": "./gel-rules/gel-python.md"
+    },
+    {
+      "file": "./gel-rules/gel-typescript.md"
     }
   ]
 }

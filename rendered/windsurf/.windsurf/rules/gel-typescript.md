@@ -1,6 +1,8 @@
 ---
+trigger: model_decision
 description: Working with Gel in TypeScript
 ---
+
 
 # Gel TypeScript Query Builder Guide
 

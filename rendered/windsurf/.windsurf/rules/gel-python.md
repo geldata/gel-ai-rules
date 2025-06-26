@@ -1,6 +1,8 @@
 ---
+trigger: model_decision
 description: Working with Gel in Python
 ---
+
 
 # Working with Gel in Python
 

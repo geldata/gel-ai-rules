@@ -1,3 +1,4 @@
+
 # Working with Gel in Python
 
 For general information please request a general Gel rules document.
@@ -54,7 +55,7 @@ await db.save(
         author=alice,
     ),
     default.Post(
-        title='First time',
+        title='First time', 
         body='Hello',
         author=billie,
     ),
@@ -68,7 +69,7 @@ Unlike `dict`, `db.get` will throw an error if you don't specify a default and n
 
 Use `db.query` for all other querying purposes.
 
-Use `query.__edgeql__[1]` before calling `.get()` or `.query()` to see the generated EdgeQL query for debugging.
+Use `query.__edgeql__[1]` before calling `.get()` or `.query()` to see the generated EdgeQL query for debugging.  
 
 ### Basic Queries
 
@@ -190,7 +191,7 @@ await db.save(posts[0], new_post)
 ## Key Features Summary
 
 1. **Type Safety**: Generated Pydantic models provide compile-time type checking
-2. **Pythonic API**: Object-oriented approach familiar to Python developers
+2. **Pythonic API**: Object-oriented approach familiar to Python developers  
 3. **Flexible Querying**: Support for filtering, field selection, ordering, and nested queries
 4. **Lambda Expressions**: Complex filtering with lambda functions and link traversal
 5. **Batch Operations**: Save multiple objects in single transactions
@@ -204,3 +205,7 @@ await db.save(posts[0], new_post)
 - Chain `.filter()`, `.select()`, `.order_by()` methods for complex queries, use `.__edgeql__` to verify the query.
 - Use lambda functions for advanced filtering with `std` module functions
 - Leverage object references to maintain relationships between data
+
+
+
+

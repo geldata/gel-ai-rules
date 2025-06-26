@@ -1,3 +1,4 @@
+
 # Working with Gel (ex EdgeDB)
 
 ## General
@@ -12,7 +13,7 @@
 Key Commands:
 
 ```bash
-gel project init --non-interactive     # Initialize project
+gel project init --non-interactive     # Initialize project  
 gel migration create --non-interactive # Create migration
 gel migrate                            # Apply migrations
 gel branch                             # Manage database branches for safe development
@@ -56,7 +57,7 @@ type Post extending Content {
     };
     multi tags: Tag;
     uppercase_title := str_upper(.title);
-
+    
     index on (.title);
     index on ((.author, .created_at));  # Note that the argument is a tuple
 }
@@ -203,7 +204,7 @@ delete User filter .id = <uuid>'09c34154-4148-11ea-9c68-5375ca908326';
 delete Review filter .author.name = $author_name;
 
 # Bulk operations with conditions
-delete Review
+delete Review 
 filter .rating < $min_rating and .author.name = 'trouble2020'
 ```
 
@@ -216,7 +217,7 @@ with
     max_year := <int64>$max_year,
     title_pattern := <optional str>$title_pattern ?? '%',
     actor_names := <array<str>>$actor_names
-select Movie {
+select Movie { 
     title, year,
     matching_actors := .actors[.full_name in array_unpack(actor_names)]
 }
@@ -232,15 +233,15 @@ filter .year >= min_year and .year <= max_year
 global current_user_id  # set at query time by the querying side
 
 function get_current_user() -> optional User using (
-    select User filter .id = global current_user_id
+    select User filter .id = global current_user_id 
 );
 
 type User {
     required name: str;
     required email: str { constraint exclusive; };
-
-    access policy own_records
-        allow all
+    
+    access policy own_records 
+        allow all 
         using (exists global current_user_id and .id ?= global current_user_id);
 }
 
@@ -248,12 +249,12 @@ type Post {
     required title: str;
     content: str;
     author: User;
-
+    
     # Triggers for validation/logging
     trigger validate_content after insert, update for each do (
         assert(len(__new__.title) > 0, message := "Title required")
     );
-
+    
     # Mutation rewrites on properties
     created_at: datetime {
         rewrite insert using (datetime_of_statement());
@@ -261,7 +262,7 @@ type Post {
     modified_at: datetime {
         rewrite update using (datetime_of_statement());
     };
-
+    
     access policy author_only allow update, delete using (.author.id = global current_user_id);
 }
 ```
@@ -280,9 +281,9 @@ type BlogPost {
 # Inserting with link properties
 insert BlogPost {
     title := 'Test',
-    editors := (select User filter .name = 'Bob') {
-        @added_at := datetime_current(),
-        @role := 'reviewer'
+    editors := (select User filter .name = 'Bob') { 
+        @added_at := datetime_current(), 
+        @role := 'reviewer' 
     }
 }
 

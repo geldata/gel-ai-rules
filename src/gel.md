@@ -1,7 +1,5 @@
 ---
 description: Working with Gel database
-globs: 
-alwaysApply: false
 ---
 
 # Working with Gel (ex EdgeDB)

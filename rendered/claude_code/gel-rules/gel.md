@@ -1,3 +1,4 @@
+
 # Working with Gel (ex EdgeDB)
 
 ## General
@@ -322,4 +323,3 @@ type Bar extending BaseType { }  # some_prop unique among Bar instances
 5. Organize complex queries with `with` blocks at top
 6. Consult MCP server examples for advanced patterns
 7. Check docs.geldata.com for syntax questions
-
