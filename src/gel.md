@@ -80,6 +80,12 @@ Use shape expressions ({ ... }) to specify which properties to include in the re
 
 ### Select
 
+Select one object by id:
+
+```edgeql
+select <Chat><uuid>"09c34154-4148-11ea-9c68-5375ca908326"
+```
+
 ```edgeql
 
 select Movie {
@@ -316,6 +322,10 @@ type Bar extending BaseType { }  # some_prop unique among Bar instances
 ```
 
 **Never refactor inheritance without considering delegated constraints.**
+
+## Troubleshooting
+
+1. Possibly more than one value returned by expression: Wrap expression with `assert_single` function.
 
 ## AI Agent Guidelines
 

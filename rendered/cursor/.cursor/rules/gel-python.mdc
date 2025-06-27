@@ -120,6 +120,8 @@ Type.select(
 # No other props will be fetched.
 ```
 
+**Note**: Python query builder fetches all properties by default (unlike vanilla EdgeQL which only fetches `id`).
+
 ```python
 # Include all fields and specific links
 q = default.Post.select(
@@ -202,6 +204,18 @@ await db.save(posts[0], new_post)
 5. **Batch Operations**: Save multiple objects in single transactions
 6. **Object References**: Use fetched objects as references when creating new data
 7. **Nested Structures**: Build and query complex nested object relationships
+
+## Schema vs Query-time Computeds
+
+**Schema computeds** are reflected as properties, access directly:
+```python
+uppercase_title=True  # No lambda needed
+```
+
+**Query-time computeds** use lambdas:
+```python
+name_length=lambda u: std.len(u.name)
+```
 
 ## Common Patterns
 
