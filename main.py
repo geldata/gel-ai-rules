@@ -9,15 +9,15 @@ from templates.zed import ZedTemplate
 def main():
     src_dir = Path("src")
     rendered_dir = Path("rendered")
-    
+
     templates = {
         "claude_code": ClaudeCodeTemplate(),
-        "vscode": VSCodeTemplate(), 
+        "vscode": VSCodeTemplate(),
         "cursor": CursorTemplate(),
         "windsurf": WindsurfTemplate(),
-        "zed": ZedTemplate()
+        "zed": ZedTemplate(),
     }
-    
+
     for editor_name, template in templates.items():
         editor_dir = rendered_dir / editor_name
         template.render(src_dir, editor_dir)

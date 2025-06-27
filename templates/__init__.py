@@ -10,11 +10,11 @@ from .windsurf import WindsurfTemplate
 from .zed import ZedTemplate
 
 __all__ = [
-    'BaseTemplate',
-    'MCP_COMMAND',
-    'ClaudeCodeTemplate',
-    'VSCodeTemplate', 
-    'CursorTemplate',
-    'WindsurfTemplate',
-    'ZedTemplate'
-] 
+    "BaseTemplate",
+    "MCP_COMMAND",
+    "ClaudeCodeTemplate",
+    "VSCodeTemplate",
+    "CursorTemplate",
+    "WindsurfTemplate",
+    "ZedTemplate",
+]
