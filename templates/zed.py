@@ -30,7 +30,9 @@ class ZedTemplate(BaseTemplate):
                 }
             }
         }
-        (dst_dir / "mcp_example.json").write_text(json.dumps(mcp_config, indent=2))
+        zed_dir = dst_dir / ".zed"
+        zed_dir.mkdir(exist_ok=True)
+        (zed_dir / "settings.json").write_text(json.dumps(mcp_config, indent=2))
 
         rules_dir = dst_dir / "gel-rules"
         rules_dir.mkdir(exist_ok=True)
