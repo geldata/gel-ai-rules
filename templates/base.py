@@ -28,7 +28,10 @@ class BaseTemplate(ABC):
 
     def get_markdown_files(self, src_dir: Path):
         """Get all markdown files from source directory."""
-        return list(src_dir.glob("*.md"))
+        files = list(src_dir.glob("*.md"))
+        return sorted(
+            files, key=lambda x: (0, x.name) if x.name == "gel.md" else (1, x.name)
+        )
 
     def parse_frontmatter(self, content: str) -> Tuple[Dict[str, str], str]:
         """Parse YAML frontmatter from markdown content."""
