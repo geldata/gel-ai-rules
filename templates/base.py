@@ -7,6 +7,8 @@ MCP_COMMAND = {
     "command": "uvx",
     "args": [
         "--refresh",
+        "--python",
+        "3.13",
         "--directory",
         ".",
         "--from",
