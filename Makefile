@@ -12,4 +12,8 @@ typecheck:
 
 check: format lint typecheck
 
-.PHONY: render format lint typecheck check
+check-render:
+	make render
+	git diff --exit-code
+
+.PHONY: render format lint typecheck check check-render
